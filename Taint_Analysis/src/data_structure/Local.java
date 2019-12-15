@@ -1,9 +1,11 @@
 package data_structure;
 
-public class Local extends InfoItem {
+public class Local extends InfoItem 
+{
 	private final String varaible; 
 
-	public Local(String var){
+	public Local(String var)
+	{
 		this.varaible = var;
 	}
 	@Override
@@ -14,24 +16,39 @@ public class Local extends InfoItem {
 //		return builder.toString();
 //	}
 
-	public String toSimplyString() {
+	public String toSimplyString() 
+	{
 		return this.varaible;
 	}
 	
 	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		int result = 3;
-		result = 37 * result + this.varaible.hashCode();
+	public int hashCode() 
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((varaible == null) ? 0 : varaible.hashCode());
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		// TODO Auto-generated method stub
-		return (o instanceof Local) && (((Local) o).varaible.equals(this.varaible));
+	public boolean equals(Object obj) 
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Local other = (Local) obj;
+		if (varaible == null) {
+			if (other.varaible != null)
+				return false;
+		} else if (!varaible.equals(other.varaible))
+			return false;
+		return true;
 	}
-	public String getVaraible() {
+	public String getVaraible() 
+	{
 		return varaible;
 	}
 

@@ -1,0 +1,68 @@
+public class IntraTest extends java.lang.Object
+{
+    private int field;
+
+    public void <init>()
+    {
+        IntraTest this;
+
+        this := @this: IntraTest;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        boolean k;
+        int i, two, j, l, $i0, k, $i1;
+        IntraTest t, $r2;
+        int[] array;
+        java.lang.String $r0;
+        byte l;
+        java.io.PrintStream $r1;
+
+        args := @parameter0: java.lang.String[];
+        k = 0;
+        $r0 = args[0];
+        i = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        two = 2;
+        $i0 = i % 2;
+        if $i0 != 0 goto label0;
+
+        j = i + two;
+        l = j;
+        goto label2;
+
+     label0:
+        k = two + two;
+        l = k;
+        if l <= 0 goto label1;
+
+        two = two + 1;
+        goto label2;
+
+     label1:
+        two = two + -1;
+
+     label2:
+        two = two + 1;
+        l = 2;
+        i = two;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(int)>(i);
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(int)>(l);
+        $r2 = new IntraTest;
+        specialinvoke $r2.<IntraTest: void <init>()>();
+        t = $r2;
+        $i1 = l + i;
+        t.<IntraTest: int field> = $i1;
+        array = newarray (int)[2];
+        array[0] = i;
+        array[1] = 0;
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.Object)>(array);
+        return;
+    }
+}

@@ -27,6 +27,7 @@ public class InterMainDriver
 				Chain<SootClass> classes = Scene.v().getApplicationClasses();
 				System.out.println("Application classes analyzed: " + classes.toString());
 				InterTaintAnalysis analysis = new InterTaintAnalysis(classes);
+				//将需要分析的类传入InterTaintAnalysis
 			}
 			
 		}));
