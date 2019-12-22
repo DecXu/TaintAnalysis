@@ -1,0 +1,110 @@
+public class InterTest extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        InterTest this;
+
+        this := @this: InterTest;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public void invoke1(int, int)
+    {
+        InterTest this;
+        int a, b, c, i, $i0, $i1;
+        byte amount;
+        float csquare, $f0;
+        HelloWorld hello, h, $r0;
+        int[] array;
+        java.io.PrintStream $r1;
+
+        this := @this: InterTest;
+        a := @parameter0: int;
+        b := @parameter1: int;
+        amount = 0;
+        $i0 = a + b;
+        c = $i0 + amount;
+        csquare = virtualinvoke this.<InterTest: float invoke2(int)>(c);
+        $r0 = new HelloWorld;
+        $i1 = (int) csquare;
+        specialinvoke $r0.<HelloWorld: void <init>(int)>($i1);
+        hello = $r0;
+        virtualinvoke hello.<HelloWorld: void invoke3()>();
+        $f0 = 2.0F * csquare;
+        h = specialinvoke this.<InterTest: HelloWorld getClass(float)>($f0);
+        virtualinvoke h.<HelloWorld: void invoke(int)>(c);
+        virtualinvoke h.<HelloWorld: void invoke3()>();
+        array = specialinvoke this.<InterTest: int[] invoke4(int,HelloWorld)>(2, h);
+        i = array[0];
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.Object)>(array);
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(int)>(i);
+        return;
+    }
+
+    private HelloWorld getClass(float)
+    {
+        InterTest this;
+        float f;
+        HelloWorld $r0;
+        int $i0;
+
+        this := @this: InterTest;
+        f := @parameter0: float;
+        $r0 = new HelloWorld;
+        $i0 = (int) f;
+        specialinvoke $r0.<HelloWorld: void <init>(int)>($i0);
+        return $r0;
+    }
+
+    private int[] invoke4(int, HelloWorld)
+    {
+        InterTest this;
+        int i, v;
+        HelloWorld h;
+        int[] array;
+
+        this := @this: InterTest;
+        i := @parameter0: int;
+        h := @parameter1: HelloWorld;
+        array = newarray (int)[3];
+        v = virtualinvoke h.<HelloWorld: int getField()>();
+        array[0] = v;
+        array[1] = i;
+        array[2] = 0;
+        return array;
+    }
+
+    public float invoke2(int)
+    {
+        InterTest this;
+        int c, $i0;
+        float $f0;
+
+        this := @this: InterTest;
+        c := @parameter0: int;
+        $i0 = c * c;
+        $f0 = (float) $i0;
+        return $f0;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        InterTest $r0, t;
+        java.lang.String $r1;
+        int $i0;
+
+        args := @parameter0: java.lang.String[];
+        $r0 = new InterTest;
+        specialinvoke $r0.<InterTest: void <init>()>();
+        t = $r0;
+        $r1 = args[0];
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+        virtualinvoke t.<InterTest: void invoke1(int,int)>($i0, 2);
+        return;
+    }
+}
